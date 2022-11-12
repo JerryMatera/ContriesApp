@@ -4,6 +4,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import io.github.jerrymatera.explore.data.models.Country
 import io.github.jerrymatera.explore.data.models.CountryWithDetails
+import io.github.jerrymatera.explore.utils.Constants.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -22,7 +23,6 @@ interface CountryAPI {
     ): CountryWithDetails
 
     companion object {
-        private const val BASE_URL = "https://restcountries.com/v3.1"
 
         fun create(): CountryAPI {
             val moshi = Moshi.Builder()
