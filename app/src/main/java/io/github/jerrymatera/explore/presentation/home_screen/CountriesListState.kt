@@ -4,6 +4,6 @@ import io.github.jerrymatera.explore.data.models.Country
 
 data class CountriesListState(
     val isLoading: Boolean = false,
-    val countries: List<Country>? = emptyList(),
+    val countries: List<Country> = emptyList(),
     val error: String = ""
 )

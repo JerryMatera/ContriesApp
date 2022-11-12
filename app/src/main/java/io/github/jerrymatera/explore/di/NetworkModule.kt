@@ -7,8 +7,8 @@ import dagger.hilt.components.SingletonComponent
 import io.github.jerrymatera.explore.data.network.CountryAPI
 import javax.inject.Singleton
 
-@InstallIn(SingletonComponent::class)
 @Module
+@InstallIn(SingletonComponent::class)
 object NetworkModule {
 
     @Singleton
