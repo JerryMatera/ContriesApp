@@ -9,7 +9,7 @@ import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
-class GetCountryUseCase @Inject constructor(
+class GetCountryByNameUseCase @Inject constructor(
     private val repository: CountryRepository
 ) {
     operator fun invoke(name: String): Flow<Resource<CountryWithDetails>> = flow {

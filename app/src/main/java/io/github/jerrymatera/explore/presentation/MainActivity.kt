@@ -1,4 +1,4 @@
-package io.github.jerrymatera.explore
+package io.github.jerrymatera.explore.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
