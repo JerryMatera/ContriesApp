@@ -3,9 +3,9 @@ package io.github.jerrymatera.explore.data.network
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import io.github.jerrymatera.explore.data.models.Country
+import io.github.jerrymatera.explore.data.models.CountryWithDetails
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
@@ -14,12 +14,12 @@ import retrofit2.http.Path
 interface CountryAPI {
 
     @GET("/all")
-    suspend fun getCountries(): Response<List<Country>>
+    suspend fun getCountries(): List<Country>
 
     @GET("/name/{name}")
-    suspend fun getCountry(
+    suspend fun getCountryByName(
        @Path(value = "name") name: String
-    ): Response<Country>
+    ): CountryWithDetails
 
     companion object {
         private const val BASE_URL = "https://restcountries.com/v3.1"
