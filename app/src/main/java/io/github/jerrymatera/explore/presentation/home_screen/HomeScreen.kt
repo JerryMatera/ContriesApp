@@ -1,4 +1,4 @@
-package io.github.jerrymatera.explore.ui.screens
+package io.github.jerrymatera.explore.presentation.home_screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -11,16 +11,20 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import io.github.jerrymatera.explore.R
-import io.github.jerrymatera.explore.ui.theme.ExploreTheme
+import io.github.jerrymatera.explore.presentation.ui.theme.ExploreTheme
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier) {
+fun HomeScreen(
+    modifier: Modifier = Modifier
+) {
     Column(
         modifier = modifier
             .fillMaxWidth()
     ) {
         TopBar()
-        ListSection()
+        ListSection(
+            modifier = modifier.padding(top = 8.dp)
+        )
     }
 }
 
@@ -104,9 +108,13 @@ fun TopBar(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun ListSection(modifier: Modifier = Modifier) {
-    Text(text = "Lists goes here")
+fun ListSection(
+    modifier: Modifier = Modifier
+) {
+    Text(text = "Hello")
+
 }
+
 
 @Preview(showSystemUi = true, showBackground = true)
 @Composable

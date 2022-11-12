@@ -1,4 +1,4 @@
-package io.github.jerrymatera.explore.ui.theme
+package io.github.jerrymatera.explore.presentation.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

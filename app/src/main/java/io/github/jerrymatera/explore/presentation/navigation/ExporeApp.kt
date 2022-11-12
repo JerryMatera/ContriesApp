@@ -1,13 +1,14 @@
-package io.github.jerrymatera.explore.ui
+package io.github.jerrymatera.explore.presentation.navigation
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import io.github.jerrymatera.explore.ui.nav.NavScreen
-import io.github.jerrymatera.explore.ui.screens.DetailScreen
-import io.github.jerrymatera.explore.ui.screens.HomeScreen
+import io.github.jerrymatera.explore.presentation.ui.screens.DetailScreen
+import io.github.jerrymatera.explore.presentation.home_screen.HomeScreen
 
 @Composable
 fun ExploreApp(modifier: Modifier = Modifier) {
@@ -16,7 +17,7 @@ fun ExploreApp(modifier: Modifier = Modifier) {
     NavHost(
         navController = navController,
         startDestination = NavScreen.HomeScreen.name,
-        modifier = modifier
+        modifier = modifier.padding(24.dp,16.dp)
     ) {
         composable(route = NavScreen.HomeScreen.name){
             HomeScreen()

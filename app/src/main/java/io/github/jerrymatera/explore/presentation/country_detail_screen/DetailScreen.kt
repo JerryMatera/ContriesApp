@@ -1,4 +1,4 @@
-package io.github.jerrymatera.explore.ui.screens
+package io.github.jerrymatera.explore.presentation.ui.screens
 
 import androidx.compose.runtime.Composable
 
