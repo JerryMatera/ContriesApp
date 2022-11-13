@@ -7,7 +7,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import io.github.jerrymatera.explore.presentation.home_screen.CountriesListViewModel
-import io.github.jerrymatera.explore.presentation.ui.screens.DetailScreen
+import io.github.jerrymatera.explore.presentation.country_detail_screen.DetailScreen
+import io.github.jerrymatera.explore.presentation.country_detail_screen.DetailScreenViewModel
 import io.github.jerrymatera.explore.presentation.home_screen.HomeScreen
 
 @Composable
@@ -27,7 +28,11 @@ fun ExploreApp(modifier: Modifier = Modifier) {
             )
         }
         composable(route = NavScreen.DetailScreen.name + "/{countryName}") {
-            DetailScreen()
+            val detailScreenViewModel = hiltViewModel<DetailScreenViewModel>()
+            DetailScreen(
+                navController,
+                detailScreenViewModel
+            )
         }
     }
 }
