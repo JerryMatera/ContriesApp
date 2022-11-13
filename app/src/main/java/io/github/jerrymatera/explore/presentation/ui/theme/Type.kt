@@ -2,12 +2,21 @@ package io.github.jerrymatera.explore.presentation.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import io.github.jerrymatera.explore.R
 
-// Set of Material typography styles to start with
+val fonts = FontFamily(
+    Font(R.font.axiforma_regular),
+    Font(R.font.axiforma_light),
+    Font(R.font.axiforma_medium),
+    Font(R.font.axiforma_bold),
+)
 val Typography = Typography(
+    defaultFontFamily = fonts,
+
     body1 = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
