@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import io.github.jerrymatera.explore.data.models.Country
+import io.github.jerrymatera.explore.domain.model.Country
 
 @Composable
 fun CountryItem(
@@ -22,14 +22,14 @@ fun CountryItem(
             .padding(8.dp)
     ) {
         AsyncImage(
-            model = country.flags.png,
+            model = country.flagImage,
             contentDescription = null,
             modifier = modifier
                 .size(40.dp)
         )
         Column(modifier = modifier) {
-            Text(text = country.name.official)
-            Text(text = country.capital[0])
+            Text(text = country.name)
+            Text(text = country.capital)
         }
     }
 }

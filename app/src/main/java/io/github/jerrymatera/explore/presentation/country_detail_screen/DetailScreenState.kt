@@ -1,6 +1,6 @@
 package io.github.jerrymatera.explore.presentation.country_detail_screen
 
-import io.github.jerrymatera.explore.data.models.CountryWithDetails
+import io.github.jerrymatera.explore.domain.model.CountryWithDetails
 
 data class DetailScreenState(
     val isLoading: Boolean = false,

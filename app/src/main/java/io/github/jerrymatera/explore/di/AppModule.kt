@@ -12,10 +12,9 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
-
-    @Singleton
     @Provides
-    fun provideCountryRepository(api: CountryAPI): CountryRepository{
+    @Singleton
+    fun provideCountryRepository(api: CountryAPI): CountryRepository {
         return CountryRepositoryImpl(api)
     }
 }

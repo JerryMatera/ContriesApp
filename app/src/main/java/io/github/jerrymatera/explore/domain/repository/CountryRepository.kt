@@ -1,11 +1,10 @@
 package io.github.jerrymatera.explore.domain.repository
 
-import io.github.jerrymatera.explore.data.models.Country
-import io.github.jerrymatera.explore.data.models.CountryWithDetails
+import io.github.jerrymatera.explore.data.models.CountryDTO
 
 interface CountryRepository {
 
-    suspend fun getCountries(): List<Country>
+    suspend fun getCountries(): List<CountryDTO>
 
-    suspend fun getCountryByName(name: String): CountryWithDetails
+    suspend fun getCountryByName(name: String): CountryDTO
 }

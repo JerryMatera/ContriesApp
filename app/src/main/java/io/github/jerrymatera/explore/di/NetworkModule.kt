@@ -11,8 +11,8 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    @Singleton
     @Provides
+    @Singleton
     fun provideCountryAPI(): CountryAPI{
         return CountryAPI.create()
     }

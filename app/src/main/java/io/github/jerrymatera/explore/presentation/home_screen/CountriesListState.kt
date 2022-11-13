@@ -1,6 +1,6 @@
 package io.github.jerrymatera.explore.presentation.home_screen
 
-import io.github.jerrymatera.explore.data.models.Country
+import io.github.jerrymatera.explore.domain.model.Country
 
 data class CountriesListState(
     val isLoading: Boolean = false,

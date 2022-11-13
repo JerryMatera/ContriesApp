@@ -1,6 +1,10 @@
 package io.github.jerrymatera.explore.data.models
 
+import com.google.gson.annotations.SerializedName
+
 data class CoatOfArms(
-    val png: String,
-    val svg: String
+    @SerializedName("png")
+    val png: String?,
+    @SerializedName("svg")
+    val svg: String?
 )

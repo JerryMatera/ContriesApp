@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import io.github.jerrymatera.explore.presentation.home_screen.components.CountryItem
 import io.github.jerrymatera.explore.presentation.home_screen.components.SearchBar
@@ -20,10 +21,11 @@ import io.github.jerrymatera.explore.presentation.navigation.NavScreen
 @Composable
 fun HomeScreen(
     navController: NavController,
+    countriesListViewModel: CountriesListViewModel,
     modifier: Modifier = Modifier,
-    viewModel: CountriesListViewModel = hiltViewModel()
-) {
-    val state = viewModel.state.value
+
+    ) {
+    val state = countriesListViewModel.state.value
     Column(
         modifier = modifier
             .fillMaxWidth()
@@ -37,7 +39,7 @@ fun HomeScreen(
                     CountryItem(
                         country = country,
                         onItemClick = {
-                            navController.navigate(NavScreen.DetailScreen.name + "/${country.name.official}")
+                            navController.navigate(NavScreen.DetailScreen.name + "/${country.name}")
                         }
                     )
                 }

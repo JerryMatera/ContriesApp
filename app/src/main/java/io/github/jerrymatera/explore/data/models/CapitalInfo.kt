@@ -1,5 +1,9 @@
 package io.github.jerrymatera.explore.data.models
 
+import com.google.gson.annotations.SerializedName
+
+
 data class CapitalInfo(
-    val latlng: List<Double>
+    @SerializedName( "latlng")
+    val latlng: List<Double>?
 )

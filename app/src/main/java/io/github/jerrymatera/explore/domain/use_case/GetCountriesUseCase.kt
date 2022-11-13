@@ -1,6 +1,6 @@
 package io.github.jerrymatera.explore.domain.use_case
 
-import io.github.jerrymatera.explore.data.models.Country
+import io.github.jerrymatera.explore.domain.model.Country
 import io.github.jerrymatera.explore.domain.repository.CountryRepository
 import io.github.jerrymatera.explore.utils.Resource
 import kotlinx.coroutines.flow.Flow
@@ -15,7 +15,7 @@ class GetCountriesUseCase @Inject constructor(
     operator fun invoke(): Flow<Resource<List<Country>>> = flow {
         try {
             emit(Resource.Loading<List<Country>>())
-            val country = repository.getCountries()
+            val country = repository.getCountries().map { it.toCountry() }
             emit(Resource.Success<List<Country>>(country))
         } catch (e: HttpException) {
             emit(

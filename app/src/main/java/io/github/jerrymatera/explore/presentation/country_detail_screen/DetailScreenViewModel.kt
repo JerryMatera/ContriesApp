@@ -32,17 +32,17 @@ class DetailScreenViewModel @Inject constructor(
             when (result) {
                 is Resource.Error -> {
                     _state.value = DetailScreenState(
-                        error = result.message ?: "Error occurred"
+                        error = result.message ?: "Error occurred",
                     )
                 }
                 is Resource.Loading -> {
                     _state.value = DetailScreenState(
-                        isLoading = true
+                        isLoading = true,
                     )
                 }
                 is Resource.Success -> {
                     _state.value = DetailScreenState(
-                        country = result.data
+                        country = result.data!!
                     )
                 }
             }
