@@ -2,7 +2,7 @@ package io.github.jerrymatera.explore.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+val Black = Color(0xFF000000)
+val White = Color(0xFFFFFFFF)
+val DarkBlue = Color(0xFF103D6A)
+val Orange = Color(0xFFF57C00)
