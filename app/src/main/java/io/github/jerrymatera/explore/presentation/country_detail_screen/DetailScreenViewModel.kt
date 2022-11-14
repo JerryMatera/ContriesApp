@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.github.jerrymatera.explore.domain.use_case.GetCountryByNameUseCase
-import io.github.jerrymatera.explore.utils.Constants
 import io.github.jerrymatera.explore.utils.Resource
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -23,9 +22,7 @@ class DetailScreenViewModel @Inject constructor(
         get() = _state
 
     init {
-        savedStateHandle.get<String>(Constants.PARAM_COUNTRY_NAME)?.let { name ->
-            getCountryByName(name)
-        }
+        savedStateHandle.get<String>("countryName")?.let { getCountryByName(it) }
 
     }
 

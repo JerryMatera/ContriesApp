@@ -86,7 +86,6 @@ data class CountryDTO(
             capital = this.capital?.first() ?: "none",
             region = this.region,
             languages = this.languages?.values?.first() ?: "Not available",
-            demonyns = this.demonyms?.eng?.m ?: "none",
             independent = this.independent,
             unMember = this.unMember,
             area = this.area.toString(),

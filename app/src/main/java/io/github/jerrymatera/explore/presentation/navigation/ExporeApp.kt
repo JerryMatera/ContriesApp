@@ -19,18 +19,22 @@ fun ExploreApp(modifier: Modifier = Modifier) {
 
     NavHost(
         navController = navController,
-        startDestination = NavScreen.HomeScreen.name,
+        startDestination = NavScreen.HomeScreen.route,
         modifier = modifier
     ) {
-        composable(route = NavScreen.HomeScreen.name) {
+        composable(route = NavScreen.HomeScreen.route) {
             val viewModel = hiltViewModel<CountriesListViewModel>()
             HomeScreen(
                 navController,
                 viewModel
             )
         }
-        composable(route = NavScreen.DetailScreen.name + "/{countryName}")
-         {
+        composable(route = NavScreen.DetailScreen.route + "/{countryName}",
+            arguments = listOf(navArgument("countryName"){
+                type = NavType.StringType
+            })
+        )
+        {
             val detailScreenViewModel = hiltViewModel<DetailScreenViewModel>()
             DetailScreen(
                 navController,

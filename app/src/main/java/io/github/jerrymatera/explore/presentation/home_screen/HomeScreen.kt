@@ -9,8 +9,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import io.github.jerrymatera.explore.presentation.home_screen.components.CountryItem
 import io.github.jerrymatera.explore.presentation.home_screen.components.SearchBar
@@ -26,20 +24,29 @@ fun HomeScreen(
 
     ) {
     val state = countriesListViewModel.state.value
+    val searchText = countriesListViewModel.searchText
+
     Column(
         modifier = modifier
             .fillMaxWidth()
+            .padding(horizontal = 24.dp)
     ) {
         TopBar()
-        SearchBar()
-        SearchFilter()
+        SearchBar(
+            searchText = searchText,
+            onSearchTextChange = countriesListViewModel.searchCountry(searchText = searchText)
+        )
+        SearchFilter(
+            onLanguageClick = {},
+            onFilterClick = {}
+        )
         Box(modifier = Modifier.fillMaxSize()) {
             LazyColumn(modifier = Modifier.fillMaxSize()) {
                 items(state.countries) { country ->
                     CountryItem(
                         country = country,
                         onItemClick = {
-                            navController.navigate(NavScreen.DetailScreen.name + "/${country.name}")
+                            navController.navigate(NavScreen.DetailScreen.route + "/${country.name}")
                         }
                     )
                 }

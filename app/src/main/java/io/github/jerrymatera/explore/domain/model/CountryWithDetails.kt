@@ -3,14 +3,12 @@ package io.github.jerrymatera.explore.domain.model
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
-@Parcelize
 data class CountryWithDetails(
     val name: String,
     val capital: String,
     val population: Int,
     val region: String,
     val languages: String,
-    val demonyns: String,
     val independent: Boolean?,
     val unMember: Boolean,
     val area: String,
@@ -25,4 +23,4 @@ data class CountryWithDetails(
     val flagImageSVG: String,
     val coatOfArmsImage: String?,
     val coatOfArmsImageSVG: String?
-): Parcelable
+)

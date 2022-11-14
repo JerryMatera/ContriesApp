@@ -15,7 +15,7 @@ class GetCountryByNameUseCase @Inject constructor(
     operator fun invoke(name: String): Flow<Resource<CountryWithDetails>> = flow {
         try {
             emit(Resource.Loading<CountryWithDetails>())
-            val country = repository.getCountryByName(name = name).toCountryWithDetails()
+            val country = repository.getCountryByName(name = name).run { toCountryWithDetails() }
             emit(Resource.Success<CountryWithDetails>(country))
         } catch (e: HttpException) {
             emit(

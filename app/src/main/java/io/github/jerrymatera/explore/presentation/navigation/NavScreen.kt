@@ -1,6 +1,6 @@
 package io.github.jerrymatera.explore.presentation.navigation
 
-enum class NavScreen {
-    HomeScreen,
-    DetailScreen
+sealed class NavScreen(val route: String) {
+    object HomeScreen : NavScreen("home_screen")
+    object DetailScreen : NavScreen("detail_screen")
 }
