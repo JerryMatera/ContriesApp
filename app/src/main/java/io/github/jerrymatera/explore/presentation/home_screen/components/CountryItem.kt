@@ -19,7 +19,7 @@ fun CountryItem(
         modifier = modifier
             .fillMaxWidth()
             .clickable { onItemClick(country) }
-            .padding(8.dp)
+            .padding(16.dp)
     ) {
         AsyncImage(
             model = country.flagImage,

@@ -37,7 +37,7 @@ class CountriesListViewModel @Inject constructor(
                 }
                 is Resource.Success -> {
                     _state.value = CountriesListState(
-                        countries = result.data!!
+                        countries = result.data!!.sortedBy { it.name }
                     )
                 }
             }
