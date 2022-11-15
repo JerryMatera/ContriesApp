@@ -14,7 +14,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.*
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -145,7 +144,7 @@ fun DetailScreen(
                                     fontSize = 16.sp
                                 )
                             ) {
-                                append("${country.geographicalLocation}")
+                                append(country.geographicalLocation)
                             }
                         },
                         fontFamily = FontFamily.Default,
@@ -162,7 +161,7 @@ fun DetailScreen(
                                     fontSize = 16.sp
                                 )
                             ) {
-                                append("${country.area}")
+                                append(country.area)
                             }
                         },
                         fontFamily = FontFamily.Default,
