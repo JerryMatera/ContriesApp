@@ -24,7 +24,6 @@ fun HomeScreen(
 
     ) {
     val state = countriesListViewModel.state.value
-    val searchText = countriesListViewModel.searchText
 
     Column(
         modifier = modifier
@@ -33,8 +32,10 @@ fun HomeScreen(
     ) {
         TopBar()
         SearchBar(
-            searchText = searchText,
-            onSearchTextChange = countriesListViewModel.searchCountry(searchText = searchText)
+            searchQuery = state.searchQuery,
+            onSearchQueryChange = {
+                countriesListViewModel.onEvent(HomeScreenEvent.onSearchQueryChange(it))
+            }
         )
         SearchFilter(
             onLanguageClick = {},
